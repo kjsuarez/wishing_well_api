@@ -8,7 +8,7 @@ class WishController < ActionController::API
   end
 
   def makePayment
-    wish_amount = params[:wish_amount]*100.to_int
+    wish_amount = params[:wish_amount].to_int
     wish_amount = wish_amount.to_i
     # Set your secret key: remember to change this to your live secret key in production
     # See your keys here: https://dashboard.stripe.com/account/apikeys
