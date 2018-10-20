@@ -10,9 +10,12 @@ class WishController < ActionController::API
   def makePayment
     wish_amount = params[:wish_amount].to_int
     wish_amount = wish_amount.to_i
-    # Set your secret key: remember to change this to your live secret key in production
-    # See your keys here: https://dashboard.stripe.com/account/apikeys
-    Stripe.api_key = Rails.application.credentials[:stripe][:test_secret_key]
+    if Rails.env.production?
+      Stripe.api_key = Rails.application.credentials[:stripe][:live_secret_key]
+    else
+      Stripe.api_key = Rails.application.credentials[:stripe][:test_secret_key]
+    end
+
 
     # Token is created using Checkout or Elements!
     # Get the payment token ID submitted by the form:
