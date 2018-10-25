@@ -7,4 +7,7 @@ Rails.application.routes.draw do
 
   post 'wish' => 'wish#makeWish'
   post 'wish/pay' => 'wish#makePayment'
+
+  get 'wishes' => 'wish#publicWishes'
+  post 'save' => 'wish#saveWish'
 end

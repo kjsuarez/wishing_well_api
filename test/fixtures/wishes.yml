@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  wish_maker_name: MyString
+  wish_text: MyString
+  wish_amount: 1
+
+two:
+  wish_maker_name: MyString
+  wish_text: MyString
+  wish_amount: 1
