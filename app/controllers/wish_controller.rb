@@ -27,7 +27,10 @@ class WishController < ActionController::API
         description: 'Example charge',
         source: token,
     })
-    saveWish
+
+    if(params[:wish][:public])
+      saveWish
+    end
     render json: {outcome: charge["outcome"]}
     # render json: {error: "errororrororror"}
   end
